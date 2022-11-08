@@ -1,0 +1,19 @@
+<section class="top">
+    <h2>Celebrities</h2>
+    <a href="/celebs/create" class="btn btn-white">Add a celebrity</a>
+</section>
+<section>
+
+
+    <div class="container">
+        {{#each allCelebs}}
+        <article>
+            <a href="/celebs/{{this._id}}">
+                <h3>{{this.name}}</h3>
+                <p>{{this.occupation}}</p>
+                <span class="btn btn-blue">Read more</span>
+            </a>
+        </article>
+        {{/each}}
+    </div>
+</section>

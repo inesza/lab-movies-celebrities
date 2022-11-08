@@ -1,0 +1,11 @@
+<section class="top">
+    <h2>Edit {{celeb.name}}</h2>
+</section>
+<section class="form">
+    <form action="/celebs/{{celeb._id}}/edit" method="post">
+        <input type="text" name="name" placeholder="Name" value="{{celeb.name}}">
+        <input type="text" name="occupation" placeholder="Occupation" value="{{celeb.occupation}}">
+        <input type="text" name="catchPhrase" placeholder="Catch phrase" value="{{celeb.catchPhrase}}">
+        <button class="btn btn-blue">Save changes</button>
+    </form>
+</section>

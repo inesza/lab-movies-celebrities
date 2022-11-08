@@ -1,0 +1,19 @@
+<section class="top">
+    <h2>Edit {{movie.title}}</h2>
+</section>
+<section class="form">
+    <form action="/movies/{{movie._id}}/edit" method="post">
+        <input type="text" name="title" placeholder="Movie title" value="{{movie.title}}">
+        <input type="text" name="genre" placeholder="Genre" value="{{movie.genre}}">
+        <textarea name="plot" cols="30" rows="10" placeholder="Plot">{{movie.plot}}</textarea>
+        <select name="cast" multiple>
+            {{#each movie.cast}}
+            <option value="{{this._id}}" selected>{{this.name}}</option>
+            {{/each}}
+            {{#each allCelebs}}
+            <option value="{{this._id}}" class="value">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <button class="btn btn-blue">Save changes</button>
+    </form>
+</section>

@@ -1,0 +1,35 @@
+<section class="top">
+    <div>
+        <a href="/celebs" class="btn btn-white" style="margin-bottom: 1em">← Back to celebs</a>
+        <h2>{{celeb.name}}</h2>
+        <p>{{celeb.occupation}}</p>
+    </div>
+    <div class="actions">
+        <form action="/celebs/{{celeb._id}}/delete" method="post">
+            <input type="submit" value="&#128465; Delete" class="btn btn-white">
+        </form>
+        <a href="/celebs/{{celeb._id}}/edit" class="btn btn-white">&#9998; Edit</a>
+    </div>
+</section>
+<section class="main details">
+    <div class="info">
+        <p><em>"{{celeb.catchPhrase}}"</em></p>
+    </div>
+    <div class="cast">
+        <h3 style="margin-bottom:1em">Starred in</h3>
+        <div class="container">
+            {{#each starredIn}}
+            <article>
+                <a href="/movies/{{this._id}}">
+                    <h3>{{this.title}}</h3>
+                    <p>{{this.genre}}</p>
+                    <span class="btn btn-blue">Read more</span>
+                </a>
+            </article>
+            {{/each}}
+
+        </div>
+    </div>
+
+
+</section>

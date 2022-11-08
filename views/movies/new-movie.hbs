@@ -1,0 +1,17 @@
+<section class="top">
+    <h2>Add a movie</h2>
+</section>
+<section class="form">
+    <form action="/movies/create" method="post">
+        <input type="text" name="title" placeholder="Movie title">
+        <input type="text" name="genre" placeholder="Genre">
+        <textarea name="plot" rows="6" placeholder="Plot"></textarea>
+        <select name="cast" multiple>
+            <option value="" selected disabled>Select one or more celebs</option>
+            {{#each allCelebs}}
+            <option value="{{this._id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+        <button class="btn btn-blue">Create movie</button>
+    </form>
+</section>

@@ -1,0 +1,18 @@
+<section class="top">
+    <h2>Movies</h2>
+    <a href="/movies/create" class="btn btn-white">Add a movie</a>
+</section>
+<section>
+
+    <div class="container">
+        {{#each allMovies}}
+        <article>
+            <a href="/movies/{{this._id}}">
+                <h3>{{this.title}}</h3>
+                <p>{{this.genre}}</p>
+                <span class="btn btn-blue">Read more</span>
+            </a>
+        </article>
+        {{/each}}
+    </div>
+</section>
